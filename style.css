@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;700&family=Roboto:wght@100;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Antonio', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.main{
+    background: url(bg1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+    animation: anim 3s;
+    backdrop-filter: none;
+}
+@keyframes anim{
+    0%,100%{transform: scale(1);}
+    50%{transform: scale(.8);
+        background-color: #2e2a2a;
+        filter: blur(4px);
+    }
+}
+
+/* =======================humburger button===================== */
+#toggle{
+    float: right;
+    position: fixed;
+    background: crimson;
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    right: 40px;
+    top: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+#toggle::before{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 35px;
+    background-color: #ffffff;
+    transform: translateY(26px);
+    transition: .3s;
+}
+#toggle::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 35px;
+    background-color: #ffffff;
+    transform: translateY(16px);
+    transition: .3s;
+}
+#toggle.active::before{
+    transform: translateY(21px) rotate(45deg);
+}
+#toggle.active::after{
+    transform: translateY(21px) rotate(-45deg);
+}
+
+/* ================logo =======================*/
+.logo{
+    float: left;
+    margin: 10px 0 0 40px;
+}
+.logo svg{
+    width: 80px;
+    height: 80px;
+}
+nav{
+    width: 100%;
+    height: 95px;
+    background: transparent;
+    background: rgba(0,0,0,0.3);
+}
+nav ul{
+    float: right;
+    margin-right: 70px;
+}
+nav ul li{
+    display: inline-block;
+    height: 95px;
+    margin: 40px 40px 0 0;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(255, 127, 0);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+nav ul li a:hover{
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: .3s ease-in;
+}
+.checkbtn{
+    display: none;
+}
+#check{
+    display: none;
+}
+@media screen and (max-width:856px){
+    .checkbtn{
+        display: block;
+    }
+    #toggle{
+        display: block;
+        display: flex;
+        justify-content: center;
+    }
+    #toggle:hover{
+        background: green;
+        box-shadow: -4px -4px 4px rgba(0,0,0,0.3), 8px 8px 18px rgba(0,0,0,0.6);
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.3);
+        backdrop-filter: blur(2px);
+        top: 95px;
+        text-align: center;
+        left: -100%;
+        z-index: 100;
+        transition: .5s ease;
+    }
+    nav ul li{
+        display: block;
+        position: relative;
+        margin: 10px 0;
+        top: 40px;
+    }
+    #check:checked ~ ul{
+        left: 0px;
+    }
+}
+.card1{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.flip1{
+    width: 430px;
+    height: 330px;
+    backdrop-filter: blur(4px);
+    background-color: rgba(255,255,255,0.5);
+}
+.picture{
+    text-align: center;
+}
+.picture img{
+    text-align: center;
+    width: 430px;
+    height: 300px;
+    animation: ramzaan 5s infinite;
+}
+.content1{
+    color: rgba(194, 29, 29, 0.877);
+    position: relative;
+}
+.content1 span{
+
+    animation: col 3s infinite;
+}
+@keyframes col{
+    0%{
+        color: green;
+        transition: .3s ease-out;
+    }
+    100%{
+        color: rgb(207, 136, 5);
+        transition: .3s ease-out;
+    }
+}
+@keyframes ramzaan{
+    0%,100%{transform: scale(1);}
+    50%{transform: scale(.8);
+        background-color: #2e2a2a;
+        filter: blur(2px);
+    }
+} 
+.btn1{
+    outline: none;
+    font-size: 2rem;
+    font-weight: 700;
+    color: crimson;
+    margin-top: 40px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+}
+.btn1:hover{
+    background: rgba(0, 128, 0, 0.541);
+    color: #ffffff;
+}
+.bgcol{
+    animation: bg 3s infinite;
+}
+@keyframes bg{
+    0%{
+        background: linear-gradient(#009dff, #970cce);
+        animation-delay: 1s;
+    }
+}
+.blink{
+    animation: blnk .7s step-end infinite alternate;
+}
+@keyframes
+blnk{
+    50%{
+        border-color : #009dff;
+        transition: .3s ease-in-out;
+    }
+}
+.logo{
+    animation: updown 4s infinite;
+}
+@keyframes updown{
+    50%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+
+
